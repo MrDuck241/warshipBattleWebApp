@@ -1,0 +1,173 @@
+/* General Styles */
+.game {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("backgrounds/Water.jpg");
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Plansza - Layout */
+#plansze {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Styles for each block in the 10x10 grid */
+.block {
+  border: 2px solid black;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.block:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Player name holder */
+.player_name_holder {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Waiting box styles */
+#wait_box {
+  width: 520px;
+  height: 580px;
+  border: 2px solid black;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("Images/steel.jpg");
+  background-size: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+#wait_info {
+  font-size: 25px;
+  color: rgb(0, 255, 238);
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+#radarCanvas {
+  height: 400px;
+  width: 400px;
+  margin-top: 30px;
+  border: 2px solid rgb(255, 255, 0);
+  border-radius: 10px;
+}
+
+/* Map layout */
+.map {
+  width: 40%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(10, 60px);
+  grid-template-rows: repeat(10, 60px);
+  margin-top: 20px;
+  gap: 2px;
+}
+
+.blur {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+/* End Game box styles */
+.endGamePopup{
+  width: 35vw;
+  height: 60vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blueviolet;
+  z-index: 9999;
+  background-image: url("backgrounds/endGameBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  filter: brightness(0.7);
+  border: 3px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameInfo{
+  height: 60%;
+  width: 80%;
+  background-image: url("backgrounds/battleReportBackground.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.reportInfoLine{
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.closeGameBtn {
+  width: 25%;
+  height: 40px;
+  background-color: rgb(222, 159, 33);
+  color: white;
+  font-weight: 700;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.closeGameBtn:hover {
+  background-color: rgb(120, 78, 0);
+}
+
+/* A smooth transition effect to the game */
+.game,
+#EndGameBox,
+#wait_box {
+  transition: transform 0.3s ease-in-out;
+}
+
+#EndGameBox:hover,
+#wait_box:hover {
+  transform: scale(1.02);
+}
